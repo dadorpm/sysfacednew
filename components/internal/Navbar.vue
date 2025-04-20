@@ -46,7 +46,9 @@
     const { data, signOut, status} = useAuth();
     const router = useRouter();
     const itensLogado = [
+        { title: 'Perfil', icon: 'mdi-account-details-outline', acao: () => { router.push('/usuarios/profile'); } },
         { title: 'Sair', icon: 'mdi-logout', acao: () => { signOut({ callbackUrl: '/' }); router.push('/'); } },
+
     ];
     const itensDeslogado = [
         { title: 'Login',icon: 'mdi-login', acao: () => { router.push('/login'); } },

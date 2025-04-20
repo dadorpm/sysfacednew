@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   auth: {
     globalAppMiddleware: true,
     originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'http://localhost:3000/api/auth',
+    baseURL: process.env.API_BASE_AUTH || 'http://localhost:3000/api/auth',
     provider: {
       type: 'authjs',
       addDefaultCallbackUrl: true,
