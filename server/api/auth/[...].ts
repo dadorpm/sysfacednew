@@ -10,6 +10,7 @@ const prisma = new PrismaClient()
 export default NuxtAuthHandler({
   secret: runtimeConfig.AUTH_SECRET,
   adapter: PrismaAdapter(prisma),
+  pages:{signIn:'/login'},
   providers: [
     // @ts-expect-error
     GoogleProvider.default({
