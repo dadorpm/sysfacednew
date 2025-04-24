@@ -2,7 +2,7 @@ import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
 import { NuxtAuthHandler } from '#auth'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '~/generated/prisma_client'
 
 const runtimeConfig = useRuntimeConfig()
 const prisma = new PrismaClient()
