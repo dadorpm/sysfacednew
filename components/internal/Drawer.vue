@@ -1,7 +1,7 @@
 <template>
     <v-navigation-drawer expand-on-hover rail v-model="drawer">
         <v-list v-if="status === 'authenticated'">
-           <v-list-item :prepend-avatar="data.user.image" :subtitle="data.user.email" :title="data.user.name"></v-list-item>
+            <NuxtLink to="/usuarios/profile" class="text-decoration-none text-black"><v-list-item :prepend-avatar="data.user.image" :subtitle="data.user.email" :title="data.user.name"></v-list-item></NuxtLink>
         </v-list>
 
         <v-divider></v-divider>
