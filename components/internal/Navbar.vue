@@ -14,7 +14,7 @@
         <v-menu v-if="status === 'authenticated'">
             <template v-slot:activator="{ props }">
                 <v-btn icon v-bind="props">
-                    <v-avatar>
+                    <v-avatar color="info" >
                        <v-img :alt="data.user.name" :src="data.user.image"></v-img>
                     </v-avatar>
                 </v-btn>
