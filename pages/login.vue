@@ -24,11 +24,8 @@
       </v-btn> -->
       <v-divider class="px-3"> <div class="text-caption font-weight-medium text-disabled ">Entre com sua conta:</div></v-divider>
       <div class="d-flex flex-wrap ga-2 py-3">
-          <v-btn @click="signIn('google', { callbackUrl: '/usuarios/profile', redirect: true })" rounded="lg" class="mx-auto" size="x-large">
-            <Icon name="logos:google" />
-          </v-btn>
-          <v-btn @click="signIn('github', { callbackUrl: '/usuarios/profile', redirect: true })" rounded="lg" class="mx-auto" size="x-large">
-            <Icon name="logos:github-icon" /> git
+          <v-btn :size="small" v-for="provider in providers" :key="provider.id" @click="signIn(provider.id, { callbackUrl: '/usuarios/profile', redirect: true })" rounded="lg" class="mx-auto" size="x-large">
+            <Icon :name="'logos:'+provider.id+'-icon'"/><span class="pl-2">{{ provider.name }}</span>
           </v-btn>
       </div>
       <!-- <v-card-text class="text-center">
@@ -44,8 +41,9 @@
 definePageMeta({
   auth: false
 })
-const visible = ref(false)
-const {signIn, getProviders} = useAuth()
+const small = ref('small')
+const {signIn} = useAuth()
+const {data: providers} = useFetch('/api/auth/providers')
 </script>
 
 <style></style>
